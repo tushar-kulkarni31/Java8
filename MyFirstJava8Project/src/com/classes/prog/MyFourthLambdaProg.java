@@ -12,10 +12,12 @@ public class MyFourthLambdaProg {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		List<Person> persons = Arrays.asList(new Person(1, "Tushar", "Kulkarni", 29),
+		List<Person> persons = Arrays.asList(new Person(3, "Tushar", "Kulkarni", 29),
 				new Person(2, "Prajakta", "Deshpande", 25),
-				new Person(3, "Ramchandra", "Kulkarni", 68),
-				new Person(4, "Rohini", "Herwadkar", 58));
+				new Person(6, "Ramchandra", "Kulkarni", 68),
+				new Person(5, "Rohini", "Herwadkar", 58),
+				new Person(4, "Shilpa", "Joshi", 31),
+				new Person(1, "Pranav", "Deshpande", 21));
 	
 		// Sort list
 		Collections.sort(persons,new Comparator<Person>() {
@@ -68,6 +70,17 @@ public class MyFourthLambdaProg {
 		System.out.println("Print all list:");
 		printConditionally(persons, p -> true);		
 		
+		// Sort list
+		Collections.sort(persons,(Person o1, Person o2) -> {
+			// TODO Auto-generated method stub
+			return o1.getSrNo() - o2.getSrNo();
+		});
+	
+		// All list
+		System.out.println("Print all list:");
+		printConditionally(persons, (Person p) -> {
+			return true;
+		});		
 	}
 	
 	private static void printAll(List<Person> persons){
